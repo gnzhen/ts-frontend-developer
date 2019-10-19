@@ -4,6 +4,10 @@ window.onload = function () {
         var label = inputLine.prev(".input-label");
         inputLine.addClass("highlight");
         label.addClass("shrink-label");
+        //remove error
+        inputLine.removeClass("error");
+        inputLine.parent().next(".input-error").text("");
+
     });
     $(".input-text").focusout(function () {
         var inputLine = $(this).parent(".input-line");
@@ -30,4 +34,54 @@ window.onload = function () {
         }
     });
 
+    $("#btnSignup").click(function () {
+        var missing = checkMissing();
+        if (missing)
+            return;
+        var psMatchError = checkPwMatch();
+        if (!psMatchError) {
+            showSuccess();
+        }
+    });
+}
+
+function checkMissing() {
+    var fields = ["Email", "Pw", "PwConfirmation"];
+    var missing = false;
+    fields.forEach(field => {
+        var input = $("#input" + field);
+        var inputVal = input.val();
+        if (inputVal)
+            return;
+        missing = true;
+        var inputLine = input.parent(".input-line");
+        inputLine.addClass("error");
+        var errorMsg = "Required field!";
+        $("#error" + field).text(errorMsg);
+        missin = true;
+    });
+    return missing;
+}
+
+function checkPwMatch() {
+    var ps = $("#inputPw").val();
+    var psConfirmation = $("#inputPwConfirmation").val();
+    if (ps === psConfirmation)
+        return false;
+    $("#inputPw").val("");
+    $("#inputPwConfirmation").val("");
+    $("#inputPw").parent(".input-line").addClass("error");
+    $("#inputPwConfirmation").parent(".input-line").addClass("error");
+    var errorMsg = "Password not match!";
+    $("#errorPw").text(errorMsg);
+    $("#errorPwConfirmation").text(errorMsg);
+    return true;
+}
+
+
+function showSuccess() {
+    $(".info-success").fadeIn("slow");
+    setTimeout(function () {
+        $(".info-success").fadeOut("slow");
+    }, 3000);
 }

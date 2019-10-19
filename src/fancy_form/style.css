@@ -82,6 +82,11 @@ body {
   line-height: 1.1875em;
 }
 
+.info-success {
+  display: none;
+  color: rgb(5, 177, 85);
+}
+
 .icon-password {
   color: lightgray;
   border: none;
@@ -116,6 +121,7 @@ form {
 }
 
 .section-input-row {
+  text-align: left;
   height: 50px;
   margin-bottom: 25px;
 }
@@ -128,6 +134,10 @@ form {
   position: relative;
   min-width: 0;
   vertical-align: top;
+}
+.input-error {
+  font-size: 12px;
+  color: red;
 }
 .input-label {
   top: -4px;
@@ -166,6 +176,12 @@ form {
 
 .input-line.highlight {
   border-bottom: solid 1px rgb(0, 186, 255);
+  transition : border 500ms ease-out;
+}
+
+.input-line.error {
+  border-bottom: solid 1px red;
+  transition : border 500ms ease-out;
 }
 
 .input-line>input:before {
@@ -216,6 +232,14 @@ input:focus, button:focus{
   padding: 0px 25px;
   background: rgb(0, 186, 255);
   border-radius: 300px;
+}
+
+.button-signup:hover {
+  background: rgba(0, 132, 255, 0.876);
+}
+
+.button-signup:active {
+  background: rgba(5, 88, 165, 0.876);
 }
 
 .button-signup > span {

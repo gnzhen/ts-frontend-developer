@@ -26,15 +26,16 @@
         <div class="input-row">
           <label class="input-label">Enter email</label>
           <div class="input-line">
-            <input class="input-text" name="email" type="email" maxlength="254" value="">
+            <input id="inputEmail" class="input-text" name="email" type="email" maxlength="254" value="">
           </div>
         </div>
+        <span id="errorEmail" class="input-error" style="color:red"></span>
       </div>
       <div class="section-input-row">
         <div class="input-row">
           <label class="input-label">Enter password</label>
           <div class="input-line">
-            <input class="input-text" name="password" type="password" maxlength="254" value="">
+            <input id="inputPw" class="input-text" name="password" type="password" maxlength="254" value="">
             <div class="section-icon-password">
               <button class="icon-password"><span><svg>
                     <path></path>
@@ -42,12 +43,13 @@
             </div>
           </div>
         </div>
+        <span id="errorPw" class="input-error"></span>
       </div>
       <div class="section-input-row">
         <div class="input-row">
           <label class="input-label">Enter confirm password</label>
           <div class="input-line">
-            <input class="input-text" name="password" type="password" maxlength="254" value="">
+            <input id="inputPwConfirmation" class="input-text" name="password" type="password" maxlength="254" value="">
             <div class="section-icon-password">
               <button class="icon-password"><span><svg>
                     <path></path>
@@ -55,8 +57,12 @@
             </div>
           </div>
         </div>
+        <span id="errorPwConfirmation" class="input-error" style="color:red"></span>
       </div>
-      <button class="button-signup" type="submit" color="primary">
+      <div class="info-success">
+        <p>Account created successfully!</p>
+      </div>
+      <button id="btnSignup" class="button-signup" type="submit" color="primary">
         <span class="">Sign Up</span>
       </button>
     </form>
