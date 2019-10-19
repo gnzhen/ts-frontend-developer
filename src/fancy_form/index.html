@@ -5,29 +5,62 @@
   <title>Fancy Form</title>
 
   <!-- You may add more stuff here -->
-  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
   <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
 
   <!-- sign up form -->
-  <div class="signup-dialog">
-
+  <div class="dialog-signup">
+    <!-- <span class="title-small">Sign up</span> -->
+    <div class="section-title-large">
+      <span class="title-large">Sign up</span>
+    </div>
+    <div class="section-photo">
+      <img class="photo" src="resources/profile.jpg">
+    </div>
+    <form onsubmit="return !1">
+      <div class="section-input-row">
+        <div class="input-row">
+          <label class="input-label">Enter email</label>
+          <div class="input-line">
+            <input class="input-text" name="email" type="email" maxlength="254" value="">
+          </div>
+        </div>
+      </div>
+      <div class="section-input-row">
+        <div class="input-row">
+          <label class="input-label">Enter password</label>
+          <div class="input-line">
+            <input class="input-text" name="password" type="password" maxlength="254" value="">
+            <div class="section-icon-password">
+              <button class="icon-password"><span><svg>
+                    <path></path>
+                  </svg></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section-input-row">
+        <div class="input-row">
+          <label class="input-label">Enter confirm password</label>
+          <div class="input-line">
+            <input class="input-text" name="password" type="password" maxlength="254" value="">
+            <div class="section-icon-password">
+              <button class="icon-password"><span><svg>
+                    <path></path>
+                  </svg></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button-signup" type="submit" color="primary">
+        <span class="">Sign Up</span>
+      </button>
+    </form>
   </div>
-
-  <form onsubmit="return !1">
-    <label for="input-address">Bitcoin Address</label>
-    <input id="input-address" placeholder="16q4PinynazaMYfv24juNLkbjkDQxJo2dc" />
-
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" placeholder="0.0000" />
-
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" placeholder="SMS OTP" />
-
-    <button>SEND BTC</button>
-  </form>
 </body>
 
 </html>
